@@ -1,0 +1,9 @@
+{
+    "name": "your-package-name",
+    "type": "module",
+    "main": "index.js",
+    "dependencies": {
+      "node-fetch": "^3.0.0"
+    }
+  }
+  
