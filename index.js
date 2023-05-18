@@ -1,3 +1,14 @@
+let video=document.getElementById("backgroundVideo")
+
+function pause(){
+    if(video.paused){
+        video.play();
+    }else{
+        video.pause();
+    }
+}
+
+
 
 let str=null;
 let content=document.getElementById("content").innerHTML;
