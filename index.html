@@ -8,16 +8,36 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="header">
+        <div id="logo">LOGO</div>
+            <ul id="headerList">
+                <i>Home</i>
+                <i>Book Trip</i>
+                <i>Contacts</i>
+                <i>Blog</i>
+            </ul>
+    </div>
     <div id="backgroundVideoDiv">
         <video id="backgroundVideo" autoplay loop >
             <source src="images/website background.mp4" type="video/mp4">
         </video>
         <div id="writting">
-            <p>edwfhhgfsgdhf</p>
-            <p>edwfhhgfsgdhf</p>
-            <p>edwfhhgfsgdhf</p>
-            <p>edwfhhgfsgdhf</p>
-            <button id="pauseButton" onclick="pause()">Pause</button>
+            <div>
+                <h1 id="catchPhrase">
+                    Explore the <br> World with Us!
+                    <p id="miniCatchPhrase">
+                        Welcome to our demo website! This is an exciting showcase of how our AI-powered Blog <br>
+                         and Smart Chatbot seamlessly integrate with your travel agency's website.
+                         <br> Explore the future of travel assistance and engage in intelligent conversations with our <br>
+                          virtual assistant. Discover how our cutting-edge technology enhances the user experience, making travel 
+                          <br> planning easier and more personalized. Remember, this is just a demonstration, but get ready to revolutionize your website with our advanced AI solutions!</p>
+                    <div id="CTA">
+                        <a href="blog.html"><button class="button">Try AI Blog</button></a>
+                        <button class="button" id="pauseButton" onclick="pause()">Pause</button>
+                    </div>
+                </h1>
+            </div>
+            
         </div>
     </div>
     <script src="index.js"></script>          
