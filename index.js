@@ -20,7 +20,7 @@ function submit(){
     const prompt = `Give me a 1000 word essay on the  Amazing places to visit in ${input}`;
     const url = "https://api.openai.com/v1/completions";
 
-    fetch(url, {
+    fetch (url, {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
