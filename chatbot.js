@@ -1,8 +1,14 @@
-let userInput=document.getELementById("userInput");
-function sendMessag(){
-    let userChat = document .createElement("div");
+let userInput=document.getElementById("userInput");
+let chatLog=document.getElementById("chatlog");
+function sendMessage(){
+    let userChat = document.createElement("div");
     //position 
-    userChat.innerHtml=userInput;
+    userChat.innerText=userInput.value;
+    chatLog.appendChild(userChat);
+
+    const apiKey = "";
+    const prompt = userInput.value;
+    const url = "https://api.openai.com/v1/chat/completions";
         fetch (url, {
                 method: "POST",
                 headers: {
@@ -15,14 +21,15 @@ function sendMessag(){
                     temperature: 0.7,
                     n: 1,
                                                                                     
-                    model: 'text-davinci-003'
+                    model: 'gpt-3.5-turbo-0301'
                  }),
                  })
                 .then((res) => res.json())
                 .then(data =>{
-                    let botChat = document .createElement("div")
+                    let botChat = document.createElement("div")
                     //position 
-                    botChat.innerHtml=data.choices[0].text
+                    botChat.innerText=data.choices[0].text;
+                    chatLog.appendChild(botChat);
 
                     })
                 .catch((err) => console.log(err));
