@@ -1,38 +1,35 @@
-let userInput=document.getElementById("userInput");
+// let userInput=document.getElementById("userInput");
 let chatLog=document.getElementById("chatlog");
-function sendMessage(){
-    let userChat = document.createElement("div");
-    //position 
-    userChat.innerText=userInput.value;
-    chatLog.appendChild(userChat);
 
-    const apiKey = "";
-    const prompt = userInput.value;
-    const url = "https://api.openai.com/v1/chat/completions";
+// let messageArray=[];
+
+function sendMessage(){
+    // messageArray.push({role:"assistant",content:"hello"});
+    // let userChat = document.createElement("div");
+    // //position 
+    // userChat.innerText=userInput.value;
+    // chatLog.appendChild(userChat);
+
+    let apiKey = "";
+    let url = 'https://api.openai.com/v1/chat/completions';
         fetch (url, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${apiKey}`,
+                    "Authorization": `Bearer ${apiKey}`,
                 },
                 body: JSON.stringify({
-                    prompt,
-                    max_tokens: 3000,
-                    temperature: 0.7,
-                    n: 1,
-                                                                                    
-                    model: 'gpt-3.5-turbo-0301'
-                 }),
-                 })
-                .then((res) => res.json())
-                .then(data =>{
-                    let botChat = document.createElement("div")
-                    //position 
-                    botChat.innerText=data.choices[0].text;
-                    chatLog.appendChild(botChat);
-
+                    model: 'gpt-3.5-turbo',
+                    messages:[
+                        {role: 'system', content: 'You are a helpful assistant from a travel agency.'},
+                        {role:'assistant',content:'hello'}
+                    ],
                     })
-                .catch((err) => console.log(err));
+                 })
+
+                .then((response) => response.json())
+                .then(data =>{chatLog.innerHTML=data.choices[0].message.content})
 
     
 }
+
