@@ -32,13 +32,29 @@
                           virtual assistant. Discover how our cutting-edge technology enhances the user experience, making travel 
                           <br> planning easier and more personalized. Remember, this is just a demonstration, but get ready to revolutionize your website with our advanced AI solutions!</p>
                     <div id="CTA">
-                        <a href="blog.html"><button class="button">Try AI Blog</button></a>
+                        <a href="blog.html">
+                            <button class="button">Try AI Blog</button>
+                        </a>
                         <button class="button" id="pauseButton" onclick="pause()">Pause</button>
                     </div>
                 </h1>
             </div>
             
         </div>
+    </div>
+    <div id="chatbot">
+        <div id="dashBoard">
+            <div style="display: flex; flex-direction: row;justify-content: center; align-items: center;">
+                <h3 id="name">Antony</h3>
+                <div id="greenDot"></div>
+            </div>
+            <img id="icon" src="" alt="up">
+        </div>
+        <div id="chatBox">
+            <p class="user">Hello</p>
+            <p class="ai">Hi</p>
+        </div>
+        <input id="input" placeholder="Enter message here..." type="text"> 
     </div>
     <script src="index.js"></script>          
 </body>

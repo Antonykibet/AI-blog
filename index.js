@@ -1,5 +1,33 @@
 let video=document.getElementById("backgroundVideo")
 
+let collapse=document.getElementById("icon");
+let chatBox=document.getElementById('chatBox');
+let chatbot=document.getElementById('chatbot');
+let textInput=document.getElementById('textInput');
+let input=document.getElementById('input');
+collapse.addEventListener('click', appearance);
+let collapsed = true;
+
+function appearance(){
+    if(collapsed==true){
+        chatBox.style.display="none";
+        input.style.display="none";
+        chatbot.style.height="5vh"
+        collapsed=false;
+    }else{
+        chatBox.style.display="flex";
+        input.style.display="flex";
+        chatbot.style.height="50vh"
+        collapsed=true;
+    }
+}
+
+
+
+
+
+
+
 function pause(){
     if(video.paused){
         video.play();
