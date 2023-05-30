@@ -42,6 +42,7 @@
             
         </div>
     </div>
+    <div id="isOnline">Antony <br> is Online 😀 <br>Wanna Chat?</div>
     <div id="chatbot">
         <div id="dashBoard">
             <div style="display: flex; flex-direction: row;justify-content: center; align-items: center;">
@@ -51,11 +52,14 @@
             <img id="icon" src="" alt="up">
         </div>
         <div id="chatBox">
-            <p class="user">Hello</p>
-            <p class="ai">Hi</p>
+            <!-- <div class="userBox"> <p class="user">Hello</p> </div>
+            <div class="aiBox"> <p class="ai">Hi</p> </div> -->
         </div>
-        <input id="input" placeholder="Enter message here..." type="text"> 
-    </div>
+        <div style="width: 95%; display: flex; justify-content: center; align-items: center; border: solid;">
+            <input id="input" placeholder="Enter message here..." type="text">
+            <div id="enterButton" onclick="sendMessage()">go</div>
+        </div>
+            </div>
     <script src="index.js"></script>          
 </body>
 </html>

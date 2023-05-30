@@ -22,12 +22,6 @@ function appearance(){
     }
 }
 
-
-
-
-
-
-
 function pause(){
     if(video.paused){
         video.play();
@@ -37,46 +31,56 @@ function pause(){
 }
 
 
-
 let str=null;
-let content=document.getElementById("content").innerHTML;
+// let content=document.getElementById("content").innerHTML;
 
-function submit(){
-    let input=document.getElementById("searchBox").value;
+let userInput=document.getElementById("input");
+let chatLog=document.getElementById("chatBox");
 
-    const apiKey = "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";
-    const prompt = `Give me a 1000 word essay on the  Amazing places to visit in ${input}`;
-    const url = "https://api.openai.com/v1/completions";
+let res='';
+let messageArray=[
+    {role: 'system', content: 'You are a helpful assistant from a travel agency.'},
+];
 
-    fetch (url, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-        prompt,
-        max_tokens: 3000,
-        temperature: 0.7,
-        n: 1,
-        
-        model: 'text-davinci-003'
-    }),
-    })
-    .then((res) => res.json())
-    .then(data => str=data.choices[0].text)
-    .catch((err) => console.log(err));
+function sendMessage(){
+    messageArray.push({role:"user",content:userInput.value});
+    let userBox = document.createElement("div");
+    let userChat = document.createElement("div");
+    userChat.classList.add('user');
+    userBox.classList.add("userBox");
+    userChat.innerText=userInput.value;
+    userBox.appendChild(userChat)
+    chatLog.appendChild(userBox);
 
+    let assistantChat=document.createElement('div');
+    let aiBox = document.createElement('div');
+
+    let apiKey = "";
+    let url = 'https://api.openai.com/v1/chat/completions';
+        fetch (url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${apiKey}`,
+                },
+                body: JSON.stringify({
+                    model: 'gpt-3.5-turbo',
+                    messages: messageArray,
+                    })
+                 })
+
+                .then((response) => response.json())
+                .then(data =>{
+                    res=data.choices[0].message.content
+                    assistantChat.innerHTML=res;
+                    assistantChat.classList.add('ai')
+                    aiBox.classList.add('aiBox');
+                    aiBox.appendChild(assistantChat);
+                    chatLog.appendChild(aiBox);
+                    messageArray.push({role:"assistant",content: res})
+                })
+               
+
+    
 }
 
-
-
-
-let i=0;
-function output(){
-    content += str[i];
-    document.getElementById("content").innerHTML = content;
-    i++;
-}
-if(str.length==i){clearInterval(output)}
-// setInterval(output,50)
