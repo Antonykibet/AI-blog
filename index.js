@@ -5,18 +5,28 @@ let chatBox=document.getElementById('chatBox');
 let chatbot=document.getElementById('chatbot');
 let textInput=document.getElementById('textInput');
 let input=document.getElementById('input');
+let enterButton= document.getElementById('enterButton');
+let icon = document.getElementById('icon');
+let pauseButton = document.getElementById('pauseButton');
+let isOnline = document.getElementById('isOnline');
+
+isOnline.addEventListener('click', appearance);
 collapse.addEventListener('click', appearance);
-let collapsed = true;
+let collapsed = false;
 
 function appearance(){
     if(collapsed==true){
         chatBox.style.display="none";
         input.style.display="none";
         chatbot.style.height="5vh"
+        icon.src="images/icons8-up-48.png"
+        enterButton.style.display="none";
         collapsed=false;
     }else{
         chatBox.style.display="flex";
         input.style.display="flex";
+        enterButton.style.display="flex";
+        icon.src="images/icons8-down-48.png"
         chatbot.style.height="50vh"
         collapsed=true;
     }
@@ -25,8 +35,10 @@ function appearance(){
 function pause(){
     if(video.paused){
         video.play();
+        pauseButton.src="images/icons8-pause-24.png";
     }else{
         video.pause();
+        pauseButton.src="images/icons8-play-24.png";
     }
 }
 
@@ -55,7 +67,7 @@ function sendMessage(){
     let assistantChat=document.createElement('div');
     let aiBox = document.createElement('div');
 
-    let apiKey = "";
+    let apiKey = "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";
     let url = 'https://api.openai.com/v1/chat/completions';
         fetch (url, {
                 method: "POST",
@@ -81,6 +93,12 @@ function sendMessage(){
                 })
                
 
-    
+                scrollToBottom();
 }
+
+// Function to scroll the chat container to the bottom
+function scrollToBottom() {
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
 
