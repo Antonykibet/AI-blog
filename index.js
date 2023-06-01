@@ -67,7 +67,7 @@ function sendMessage(){
     let assistantChat=document.createElement('div');
     let aiBox = document.createElement('div');
 
-    let apiKey = "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";
+    let apiKey = "";
     let url = 'https://api.openai.com/v1/chat/completions';
         fetch (url, {
                 method: "POST",
