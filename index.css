@@ -241,10 +241,27 @@ a{
     }
     #miniCatchPhrase{
         font-size: 1.5vh;
-        border: solid;
     }
     #headerList{
         display: none;
+    }
+    #pauseButton{
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+    }
+    #isOnline{
+        font-size: 1.5vh;
+    }
+    #chatbot{
+        display: none;
+    }
+    #mobileChatIcon{
+        z-index: 3;
+        width: 32px;
+        position: fixed;
+        bottom: 8px;
+        right: 8px;
     }
    
 }
