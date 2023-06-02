@@ -12,24 +12,46 @@ let isOnline = document.getElementById('isOnline');
 
 isOnline.addEventListener('click', appearance);
 collapse.addEventListener('click', appearance);
+icon.addEventListener('click', appearance);
+input.addEventListener('keydown',handleEnterKey)
 let collapsed = false;
 
-function appearance(){
-    if(collapsed==true){
-        chatBox.style.display="none";
-        input.style.display="none";
-        chatbot.style.height="5vh"
-        icon.src="images/icons8-up-48.png"
-        enterButton.style.display="none";
-        collapsed=false;
-    }else{
-        chatBox.style.display="flex";
-        input.style.display="flex";
-        enterButton.style.display="flex";
-        icon.src="images/icons8-down-48.png"
-        chatbot.style.height="50vh"
-        collapsed=true;
+function handleEnterKey(event) {
+    if (event.keyCode === 13) {
+       sendMessage();
     }
+}
+function appearance(){
+    if(window.innerWidth<=1000){
+        if(collapsed==true){
+            chatbot.style.display="none";
+            collapsed=false;
+        }else{
+            chatbot.style.display="flex";
+            chatBox.style.display="flex";
+            input.style.display="flex";
+            enterButton.style.display="flex";
+            icon.src="images/icons8-down-48.png"
+            collapsed=true;
+        }
+    }else{
+        if(collapsed==true){
+            chatBox.style.display="none";
+            input.style.display="none";
+            chatbot.style.height="5vh"
+            icon.src="images/icons8-up-48.png"
+            enterButton.style.display="none";
+            collapsed=false;
+        }else{
+            chatBox.style.display="flex";
+            input.style.display="flex";
+            enterButton.style.display="flex";
+            icon.src="images/icons8-down-48.png"
+            chatbot.style.height="50vh"
+            collapsed=true;
+        }
+    }
+  
 }
 
 function pause(){
@@ -95,6 +117,8 @@ function sendMessage(){
 
                 scrollToBottom();
 }
+
+
 
 // Function to scroll the chat container to the bottom
 function scrollToBottom() {
