@@ -1,3 +1,4 @@
+
 let video=document.getElementById("backgroundVideo")
 
 let collapse=document.getElementById("icon");
@@ -89,7 +90,7 @@ function sendMessage(){
     let assistantChat=document.createElement('div');
     let aiBox = document.createElement('div');
 
-    let apiKey = "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";
+  
     let url = 'https://api.openai.com/v1/chat/completions';
         fetch (url, {
                 method: "POST",
