@@ -246,8 +246,14 @@ a{
     #headerList{
         display: none;
     }
+    #logoImage{
+        width: 64px;
+    }
+    #hamburger{
+        display: flex;
+    }
     #pauseButton{
-
+        z-index: 3;
         position: fixed;
         bottom: 24px;
         left: 24px;
@@ -266,7 +272,7 @@ a{
     }
     #mobileChatIcon{
         z-index: 3;
-        width: 56px;
+        width: 48px;
         position: fixed;
         bottom: 8px;
         right: 8px;
