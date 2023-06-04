@@ -218,7 +218,7 @@ a{
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
     z-index: 5;
-    top: 84%;
+    top: 75%;
     right: 3%;
     padding: 8px;
     border-radius: 10%;
@@ -247,9 +247,10 @@ a{
         display: none;
     }
     #pauseButton{
+
         position: fixed;
-        bottom: 16px;
-        left: 16px;
+        bottom: 24px;
+        left: 24px;
     }
     #isOnline{
         font-size: 1.5vh;
@@ -265,7 +266,7 @@ a{
     }
     #mobileChatIcon{
         z-index: 3;
-        width: 32px;
+        width: 56px;
         position: fixed;
         bottom: 8px;
         right: 8px;
