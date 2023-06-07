@@ -48,7 +48,7 @@ function appearance(){
             input.style.display="flex";
             enterButton.style.display="flex";
             icon.src="images/icons8-down-48.png"
-            chatbot.style.height="50vh"
+            chatbot.style.height="60vh"
             collapsed=true;
         }
     }
@@ -89,7 +89,7 @@ function sendMessage(){
 
     let assistantChat=document.createElement('div');
     let aiBox = document.createElement('div');
-    let apiKey = process.env.API_KEY;
+    let apiKey = 'nanya, nanya bizness';
   
     let url = 'https://api.openai.com/v1/chat/completions';
         fetch (url, {
@@ -126,4 +126,4 @@ function scrollToBottom() {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-
+setTimeout(pause, 1000);
