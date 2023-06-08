@@ -6,7 +6,7 @@ body{
     align-items: center;
     flex-direction: column;
     margin: 0px;
-    height: 101vh;
+    height: 100vh;
 }
 #header{
     z-index: 5;
@@ -232,6 +232,9 @@ a{
 #hamburger{
     display: none;
 }
+#mobileChatIcon{
+    display: none;
+}
 
 @media screen and (max-width: 1000px){
     #body{
@@ -274,6 +277,7 @@ a{
         height: 100vh;
     }
     #mobileChatIcon{
+        display: flex;
         z-index: 3;
         width: 48px;
         position: fixed;
