@@ -74,7 +74,7 @@ let chatLog=document.getElementById("chatBox");
 
 let res='';
 let messageArray=[
-    {role: 'system', content: 'You are a helpful assistant from a travel agency, your name is Antony, an average 30 year old man leaving in usa .'},
+    {role: 'system', content: 'You are a helpful assistant from a travel agency, your name is Antony, an average 30, be casual if necessary, like get into coversations like youre chatting to a friend .'},
 ];
 
 function sendMessage(){
@@ -89,7 +89,7 @@ function sendMessage(){
 
     let assistantChat=document.createElement('div');
     let aiBox = document.createElement('div');
-    let apiKey = 'Gerara here mehn';
+    let apiKey = 'gerara here mehn';
   
     let url = 'https://api.openai.com/v1/chat/completions';
         fetch (url, {
